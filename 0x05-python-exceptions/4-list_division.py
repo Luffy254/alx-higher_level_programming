@@ -6,7 +6,8 @@ def list_division(my_list_1, my_list_2, list_length):
         try:
             dividend = my_list_1[i]
             divisor = my_list_2[i]
-            if isinstance(dividend, (int, float)) and isinstance(divisor, (int, float)):
+            if isinstance(dividend, (int, float)) and \
+                    isinstance(divisor, (int, float)):
                 try:
                     division = dividend / divisor
                 except (ZeroDivisionError):
