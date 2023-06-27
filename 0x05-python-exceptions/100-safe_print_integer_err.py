@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from sys import stderr
+import sys
 
 
 def safe_print_integer_err(value):
@@ -10,6 +10,6 @@ def safe_print_integer_err(value):
 
         print("{:d}".format(int_value))
         return True
-    except Exception as e:
-        print("Exception: {}".format(e), file=stderr)
+    except ValueError as e:
+        sys.stderr.write("Exception: {}\n".format(e))
         return False
