@@ -5,6 +5,9 @@
 
 class Rectangle:
     """Represents a rectangle"""
+
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """ Initialize a new rectangle instance
         Args:
