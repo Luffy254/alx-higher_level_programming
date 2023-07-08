@@ -49,11 +49,12 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_list_of_strings(self):
         """Test a list of strings"""
-        self.assertEqual(max_integer("John went to daycare"), "daycare")
+        self.assertEqual(max_integer(["John", "went", "to", "daycare"]), "went")
 
     def test_empty_list(self):
         """Test an empty list"""
         self.assertIsNone(max_integer([]))
 
-    if __name__ == '__main__':
-        unittest.main()
+
+if __name__ == '__main__':
+    unittest.main()
