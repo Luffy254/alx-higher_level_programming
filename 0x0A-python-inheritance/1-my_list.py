@@ -4,18 +4,15 @@
 
 
 class MyList(list):
-    """class tha inherists from a lists
+    """class that inherists from list
 
     Public Methods:
         print_sorted() - Prints the list in ascending order
     """
 
     def __init__(self):
-        """
-        method to initialize objects
-        """
+        """method to initialize objects"""
         super().__init__()
-
 
     def print_sorted(self):
         """
