@@ -2,15 +2,31 @@
 * Test cases for MyList class *
 *****************************
 
+* Importing the function from the module
+>>> MyList = __import__("1-my_list").MyList
+
+* Check for module docstring
+>>> mod = __import__("1-my_list").__doc__
+>>> len(mod) > 1
+True
+
+* Check for class docstring:
+>>> cl = __import__("1-my_list").MyList.__doc__
+>>> len(cl) > 1
+True
+
+* Check for method docstring:
+>>> meth = __import__("1-my_list").MyList.print_sorted.__doc__
+>>> len(meth) > 1
+True
+
 
 * Test case 1: Check if an empty list is sorted correctly
->>> MyList = __import__("1-my_list").MyList
 >>> my_list = MyList()
 >>> my_list.print_sorted()
 []
 
 * Test case 1:(check if print_sorted() sorts the list in ascending order)
->>> MyList = __import__("1-my_list").MyList
 >>> my_list = MyList()
 >>> my_list.append(5)
 >>> my_list.append(4)
