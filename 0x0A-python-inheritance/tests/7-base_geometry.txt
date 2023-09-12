@@ -1,0 +1,74 @@
+****************************************
+* Test cases for the BaseGeometry class. *
+****************************************
+
+* Test case 1: (check for area method failure)
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+>>> geometry = BaseGeometry()
+>>> geometry.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+* Test case 2: (check for many arguments in area)
+>>> geometry.area(1)
+Traceback (most recent call last):
+    ...
+TypeError: area() takes 1 positional argument but 2 were given
+
+* Test case 3: (check validator method for passing an integer)
+>>> geometry.integer_validator("integer", 3)
+
+* Test case 4: (check validator method for passing integer == 0)
+>>> geometry.integer_validator("integer", 0)
+Traceback (most recent call last):
+    ...
+ValueError: integer must be greater than 0
+
+* Test case 5: (check validator method for passing integer < 0)
+>>> geometry.integer_validator("integer", -1)
+Traceback (most recent call last):
+    ...
+ValueError: integer must be greater than 0
+
+* Test case 6: (check validator method for passing string)
+>>> geometry.integer_validator("string", "hello")
+Traceback (most recent call last):
+    ...
+TypeError: string must be an integer
+
+* Test case 7: (check validator method for passing float)
+>>> geometry.integer_validator("float", 1.5)
+Traceback (most recent call last):
+    ...
+TypeError: float must be an integer
+
+* Test case 8: (check validator method for passing list)
+>>> geometry.integer_validator("list", [1, 2, 3])
+Traceback (most recent call last):
+    ...
+TypeError: list must be an integer
+
+* Test case 9: (check validator method for passing dict)
+>>> geometry.integer_validator("dict", {"key": "value"})
+Traceback (most recent call last):
+    ...
+TypeError: dict must be an integer
+
+* Test case 10: (check validator method for passing no arguments)
+>>> geometry.integer_validator()
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+* Test case 11: (check validator method for passing only one argument)
+>>> geometry.integer_validator("integer")
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+* Test case 12: (check alidator method for passing too many arguments)
+>>> geometry.integer_validator("integer", 1, 2)
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
