@@ -2,8 +2,28 @@
 * Test cases for the BaseGeometry class. *
 ****************************************
 
-* Test case 1: (check for area method failure)
+* Import the function from module
 >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+* Check for module docstring
+>>> mod = __import__("7-base_geometry").__doc__
+>>> len(mod) > 1
+True
+
+* Check for class docstring
+>>> cl = __import__("7-base_geometry").BaseGeometry.__doc__
+>>> len(cl) > 1
+True
+
+* Check for method docstring
+>>> meth1 = __import__("7-base_geometry").BaseGeometry.area.__doc__
+>>> len(meth1) > 1
+True
+>>> meth2 = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+>>> len(meth2) > 1
+True
+
+* Test case 1: (check for area method failure)
 >>> geometry = BaseGeometry()
 >>> geometry.area()
 Traceback (most recent call last):
