@@ -10,6 +10,13 @@ class MyList(list):
         print_sorted() - Prints the list in ascending order
     """
 
+    def __init__(self):
+        """
+        method to initialize objects
+        """
+        super().__init__()
+
+
     def print_sorted(self):
         """
         prints the sorted list
