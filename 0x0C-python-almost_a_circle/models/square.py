@@ -16,25 +16,25 @@ class Square(Rectangle):
             id (int): identifier for the instance
         """
         super().__init__(size, size, x, y, id)
-        
+
     @property
     def size(self):
         """Fetch size of square"""
         return self.width
-        
+
     @size.setter
     def size(self, value):
         """sets size of square"""
         self.width = value
         self.height = value
-        
+
     def __str__(self):
         """Return a string representation of the object."""
         class_name = type(self).__name__
         x, y = super().x, super().y
         width = super().width
         return f"[{class_name}] ({self.id}) {x}/{y} - {width}"
-        
+
     def update(self, *args, **kwargs):
         """Update instance attributes with arguments."""
         if args:
@@ -50,7 +50,7 @@ class Square(Rectangle):
                     setattr(self, "_Rectangle__height", value)
                 else:
                     setattr(self, key, value)
-                    
+
     def to_dictionary(self):
         """Convert class attributes to dictionary"""
         dictionary = {}
